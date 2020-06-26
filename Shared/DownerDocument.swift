@@ -9,8 +9,8 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 extension UTType {
-    static var exampleText: UTType {
-        UTType(importedAs: "com.example.plain-text")
+    static var markdownDoc: UTType {
+        UTType(importedAs: "com.jossy.markdown")
     }
 }
 
@@ -21,7 +21,7 @@ struct DownerDocument: FileDocument {
         self.text = text
     }
 
-    static var readableContentTypes: [UTType] { [.exampleText] }
+    static var readableContentTypes: [UTType] { [.markdownDoc] }
 
     init(fileWrapper: FileWrapper, contentType: UTType) throws {
         guard let data = fileWrapper.regularFileContents,

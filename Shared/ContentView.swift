@@ -11,7 +11,11 @@ struct ContentView: View {
     @Binding var document: DownerDocument
 
     var body: some View {
-        TextEditor(text: $document.text)
+      HStack{
+        TextEditor(text: $document.text).frame(maxWidth:.infinity)
+        Text(document.text).frame(maxWidth:.infinity,maxHeight: .infinity,alignment: .topLeading).padding()
+      }
+        
     }
 }
 
