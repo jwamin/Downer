@@ -17,6 +17,8 @@
 		5739243A24A586230074AE57 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5739240D24A586210074AE57 /* ContentView.swift */; };
 		5739243B24A586230074AE57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5739240E24A586230074AE57 /* Assets.xcassets */; };
 		5739243C24A586230074AE57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5739240E24A586230074AE57 /* Assets.xcassets */; };
+		57E0066A24A6DC9C00CD44B9 /* WYSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E0066924A6DC9C00CD44B9 /* WYSView.swift */; };
+		57E0066B24A6DC9C00CD44B9 /* WYSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E0066924A6DC9C00CD44B9 /* WYSView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,7 @@
 		5739242E24A586230074AE57 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5739243224A586230074AE57 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		5739243424A586230074AE57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57E0066924A6DC9C00CD44B9 /* WYSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYSView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +107,7 @@
 				5739240B24A586210074AE57 /* DownerApp.swift */,
 				5739240C24A586210074AE57 /* DownerDocument.swift */,
 				5739240D24A586210074AE57 /* ContentView.swift */,
+				57E0066924A6DC9C00CD44B9 /* WYSView.swift */,
 				5739240E24A586230074AE57 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -314,6 +318,7 @@
 			files = (
 				5739243524A586230074AE57 /* DownerApp.swift in Sources */,
 				5739243724A586230074AE57 /* DownerDocument.swift in Sources */,
+				57E0066A24A6DC9C00CD44B9 /* WYSView.swift in Sources */,
 				5739243924A586230074AE57 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,6 +329,7 @@
 			files = (
 				5739243624A586230074AE57 /* DownerApp.swift in Sources */,
 				5739243824A586230074AE57 /* DownerDocument.swift in Sources */,
+				57E0066B24A6DC9C00CD44B9 /* WYSView.swift in Sources */,
 				5739243A24A586230074AE57 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

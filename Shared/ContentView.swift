@@ -13,7 +13,7 @@ struct ContentView: View {
     var body: some View {
       HStack{
         TextEditor(text: $document.text).frame(maxWidth:.infinity)
-        Text(document.text).frame(maxWidth:.infinity,maxHeight: .infinity,alignment: .topLeading).padding()
+        WYSView(text: $document.text).frame(maxWidth:.infinity,maxHeight: .infinity,alignment: .topLeading).padding()
       }
         
     }
