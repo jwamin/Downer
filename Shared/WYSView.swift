@@ -15,6 +15,8 @@ struct WYSView: View {
   func processString(str: String) -> some View {
     let components = str.components(separatedBy: "\n")
     
+    //work out how many string there are, and group them, in order to prepare for swiftui's view numebr overflow?
+    
     return VStack(alignment:.leading){
       ForEach(components,id:\.self){ str in
         getViewForComponent(str: str)
@@ -26,7 +28,7 @@ struct WYSView: View {
   func getViewForComponent(str: String) -> Text {
     
     //from first character to alphanumeric
-    var startString = str.trimmingCharacters(in: .whitespaces)
+    let startString = str.trimmingCharacters(in: .whitespaces)
     var prefix = ""
     for index in str.indices {
       let indexChar = str[index]

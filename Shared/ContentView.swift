@@ -8,14 +8,37 @@
 import SwiftUI
 
 struct ContentView: View {
-    @Binding var document: DownerDocument
-
+  @Binding var document: DownerDocument
+  
+  #if os(iOS)
+  @Environment(\.horizontalSizeClass) var horizontalClass
+  
+  func getEditor<Content:View>(@ViewBuilder content: @escaping () -> Content) -> AnyView {
+    if horizontalClass == .compact {
+      return AnyView(VStack {
+        content()
+      })
+    } else {
+      return AnyView(HStack {
+        content()
+      })
+    }
+  }
+  #endif
+  
     var body: some View {
-      HStack{
+      #if os(iOS)
+      return getEditor(){
         TextEditor(text: $document.text).frame(maxWidth:.infinity)
         WYSView(text: $document.text).frame(maxWidth:.infinity,maxHeight: .infinity,alignment: .topLeading).padding()
       }
-        
+      #endif
+      #if os(macOS)
+      return HStack{
+        TextEditor(text: $document.text).frame(maxWidth:.infinity)
+        WYSView(text: $document.text).frame(maxWidth:.infinity,maxHeight: .infinity,alignment: .topLeading).padding()
+      }
+      #endif
     }
 }
 

@@ -12,6 +12,7 @@ struct DownerApp: App {
     var body: some Scene {
         DocumentGroup(newDocument: DownerDocument()) { file in
             ContentView(document: file.$document)
+              //.frame(minWidth:640, minHeight: 480) MacOS only
         }
     }
 }
