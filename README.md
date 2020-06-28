@@ -6,6 +6,7 @@
 
 ‘#’ Headings 
 “*” Bullets
+single line `code` snippets... `like this` 
 
 ### Architecture
 
@@ -14,10 +15,7 @@
 ### Todo:
 
 enforce "extra space rule"
-monospaced
 
 links
 
 Numbered Lists
-
-line with a `code` snippet `like this` 
