@@ -51,7 +51,9 @@ func getHStack(str:String, indices:Array<(String.Index,String.Index)>) -> AnyVie
     AnyView(HStack(spacing:0){
         Text(str[str.startIndex..<indices[0].0])
         ForEach(indices.indices) { index in
-            Text(str[indices[index].0...indices[index].1]).background(Color.secondary).font(.system(.body, design: .monospaced))
+            Text(str[indices[index].0...indices[index].1])
+                .background(Color.secondary).foregroundColor(.white)
+                .font(.system(.body, design: .monospaced)).cornerRadius(3).padding(1)
             if indices.indices.contains(index+1), indices[index].1 < indices[index+1].0 {
                 let lowerboundOfGap = str.index(after: indices[index].1)
                 let upperBoundOfGap = str.index(before: indices[index+1].0)

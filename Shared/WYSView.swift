@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-var validChars = "#*`[]()!"
+var validChars = "#*[]()!"
 
 struct WYSView: View {
   @Binding var text: String
@@ -83,6 +83,7 @@ let str = """
 ##World
 ###world? ####Whatever
 *Hello world
+so `how about` this? `right`?
 """
       
       return WYSView(text: .constant(str))
