@@ -10,10 +10,6 @@ import SwiftUI
 struct ContentView: View {
     @Binding var document: DownerDocument
     
-    func insertAtBeginningOfLine(_ str:String){
-        print("will prepend \(str)")
-    }
-    
     #if os(iOS)
     @Environment(\.horizontalSizeClass) var horizontalClass
     func getEditor<Content:View>(@ViewBuilder content: @escaping () -> Content) -> AnyView {
@@ -29,6 +25,11 @@ struct ContentView: View {
     }
     #endif
     
+    func insertAtBeginningOfLine(_ str:String){
+        print("will prepend \(str) to line")
+    }
+    private let touchBarStrings = ["#","##","###","*"]
+    
     var body: some View {
         
         #if os(iOS)
@@ -39,9 +40,10 @@ struct ContentView: View {
         #endif
         
         #if os(macOS)
-        let strings = ["#","##","###","*"]
+        
+        
         let touchBar = TouchBar(id:"mac") {
-            ForEach(strings,id:\.self){ str in
+            ForEach(self.touchBarStrings,id:\.self){ str in
                 Button(action: {
                     self.insertAtBeginningOfLine(str)
                 }, label: {
@@ -51,7 +53,9 @@ struct ContentView: View {
         }
         
         return HStack{
-            TextEditor(text: $document.text).frame(maxWidth:.infinity).touchBar(touchBar)
+            TextEditor(text: $document.text).frame(maxWidth:.infinity).touchBar(touchBar).onChange(of: /*@START_MENU_TOKEN@*/"Value"/*@END_MENU_TOKEN@*/) { value in
+                /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Code@*/ /*@END_MENU_TOKEN@*/
+            }
             WYSView(text: $document.text).frame(maxWidth:.infinity,maxHeight: .infinity,alignment: .topLeading).padding()
         }
         #endif
