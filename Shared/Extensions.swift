@@ -47,8 +47,11 @@ extension String {
     
 }
 
-func getHStack(str:String, indices:Array<(String.Index,String.Index)>) -> AnyView{
-    AnyView(HStack(spacing:0){
+typealias CodeRangeCouplets = Array<(String.Index,String.Index)>
+
+func getHStack(str:String, indices:CodeRangeCouplets) -> AnyView {
+    AnyView(
+        HStack(spacing:0){
         Text(str[str.startIndex..<indices[0].0])
         ForEach(indices.indices) { index in
             Text(str[indices[index].0...indices[index].1])
@@ -60,6 +63,6 @@ func getHStack(str:String, indices:Array<(String.Index,String.Index)>) -> AnyVie
                 Text(str[lowerboundOfGap...upperBoundOfGap])
             }
         }
-        Text(str[indices.last!.1..<str.index(before: str.endIndex)])
+        Text(str[indices.last!.1..<str.endIndex])
     })
 }

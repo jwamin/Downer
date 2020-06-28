@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-var validChars = "#*[]()!"
+var validPrefixChars = "#*[]()!"
 
 struct WYSView: View {
   @Binding var text: String
@@ -34,7 +34,7 @@ struct WYSView: View {
       if indexChar == " " {
         break
       }
-      if validChars.contains(indexChar) {
+      if validPrefixChars.contains(indexChar) {
         prefix.append(indexChar)
       } else {
         break
@@ -63,7 +63,7 @@ struct WYSView: View {
       return AnyView(Text("● "+displayString).font(.system(.body)))
     
     default:
-      return AnyView(Text(str))
+        return AnyView(Text(str).font(.system(.body)))
     }
     
   }
