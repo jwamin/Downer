@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-var validChars = "#*`[]()"
+var validChars = "#*`[]()!"
 
 struct WYSView: View {
   @Binding var text: String
@@ -25,15 +25,17 @@ struct WYSView: View {
       
   }
   
+    
+    
   func getViewForComponent(str: String) -> Text {
     
     //from first character to alphanumeric
-    let startString = str.trimmingCharacters(in: .whitespaces)
+    let startString = str.trim()
     var prefix = ""
     for index in str.indices {
       let indexChar = str[index]
       if indexChar == " " {
-        continue
+        break
       }
       if validChars.contains(indexChar) {
         prefix.append(indexChar)
@@ -42,7 +44,7 @@ struct WYSView: View {
       }
     }
     
-    let displayString = startString.dropFirst(prefix.count)
+    let displayString = String(startString.dropFirst(prefix.count)).trim()
     
     switch prefix {
     case "#":
@@ -62,7 +64,9 @@ struct WYSView: View {
   }
   
     var body: some View {
-        processString(str: text)
+        ScrollView{
+            processString(str: text)
+        }.frame(maxWidth:.infinity,alignment: .leading)
     }
 }
 

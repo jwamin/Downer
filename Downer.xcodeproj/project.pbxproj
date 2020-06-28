@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57023EEE24A8B88E00C9799C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57023EED24A8B88E00C9799C /* Extensions.swift */; };
+		57023EEF24A8B88E00C9799C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57023EED24A8B88E00C9799C /* Extensions.swift */; };
 		5739242824A586230074AE57 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5739242724A586230074AE57 /* Tests_iOS.swift */; };
 		5739243324A586230074AE57 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5739243224A586230074AE57 /* Tests_macOS.swift */; };
 		5739243524A586230074AE57 /* DownerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5739240B24A586210074AE57 /* DownerApp.swift */; };
@@ -39,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		57023EEC24A8B7D400C9799C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		57023EED24A8B88E00C9799C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		5739240B24A586210074AE57 /* DownerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownerApp.swift; sourceTree = "<group>"; };
 		5739240C24A586210074AE57 /* DownerDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownerDocument.swift; sourceTree = "<group>"; };
 		5739240D24A586210074AE57 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -92,6 +96,7 @@
 		5739240524A586210074AE57 = {
 			isa = PBXGroup;
 			children = (
+				57023EEC24A8B7D400C9799C /* README.md */,
 				5739240A24A586210074AE57 /* Shared */,
 				5739241524A586230074AE57 /* iOS */,
 				5739241C24A586230074AE57 /* macOS */,
@@ -108,6 +113,7 @@
 				5739240C24A586210074AE57 /* DownerDocument.swift */,
 				5739240D24A586210074AE57 /* ContentView.swift */,
 				57E0066924A6DC9C00CD44B9 /* WYSView.swift */,
+				57023EED24A8B88E00C9799C /* Extensions.swift */,
 				5739240E24A586230074AE57 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -316,6 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57023EEE24A8B88E00C9799C /* Extensions.swift in Sources */,
 				5739243524A586230074AE57 /* DownerApp.swift in Sources */,
 				5739243724A586230074AE57 /* DownerDocument.swift in Sources */,
 				57E0066A24A6DC9C00CD44B9 /* WYSView.swift in Sources */,
@@ -327,6 +334,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57023EEF24A8B88E00C9799C /* Extensions.swift in Sources */,
 				5739243624A586230074AE57 /* DownerApp.swift in Sources */,
 				5739243824A586230074AE57 /* DownerDocument.swift in Sources */,
 				57E0066B24A6DC9C00CD44B9 /* WYSView.swift in Sources */,
