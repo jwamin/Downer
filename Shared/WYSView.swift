@@ -14,7 +14,6 @@ struct WYSView: View {
   
   func processString(str: String) -> some View {
     let components = str.components(separatedBy: "\n")
-    
     //work out how many string there are, and group them, in order to prepare for swiftui's view numebr overflow?
     
     return VStack(alignment:.leading){
@@ -24,10 +23,8 @@ struct WYSView: View {
     }
       
   }
-  
     
-    
-  func getViewForComponent(str: String) -> Text {
+  func getViewForComponent(str: String) -> AnyView {
     
     //from first character to alphanumeric
     let startString = str.trim()
@@ -45,20 +42,28 @@ struct WYSView: View {
     }
     
     let displayString = String(startString.dropFirst(prefix.count)).trim()
+
+    let codeRanges = displayString.getCodeRanges()
+    
+    
+    if codeRanges.count > 0{
+        return AnyView(getHStack(str: displayString, indices: codeRanges))
+    }
     
     switch prefix {
     case "#":
-      return Text(displayString).font(.largeTitle)
+        return AnyView(Text(displayString).font(.largeTitle).bold())
     case "##":
-      return Text(displayString).font(.title)
+      return AnyView(Text(displayString).font(.title))
     case "###":
-      return Text(displayString).font(.headline)
+      return AnyView(Text(displayString).font(.headline))
     case "####":
-      return Text(displayString).font(.subheadline)
+      return AnyView(Text(displayString).font(.subheadline))
     case "*":
-      return Text("● "+displayString).font(.system(.body))
+      return AnyView(Text("● "+displayString).font(.system(.body)))
+    
     default:
-      return Text(str)
+      return AnyView(Text(str))
     }
     
   }
@@ -76,8 +81,7 @@ struct WYSView_Previews: PreviewProvider {
 let str = """
 #Hello
 ##World
-###world?
-####Whatever
+###world? ####Whatever
 *Hello world
 """
       
