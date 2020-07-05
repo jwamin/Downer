@@ -1,18 +1,24 @@
+![Alt text](/Development%20Assets/readme.png?raw=true "Screenshot")
+
 # Downer
 
 ## MultiPlatform Markdown Editor with iOS14/macOS11 SwiftUI Lifecycle
 
-### Supports:
+## Supports:
 
 ‘#’ Headings 
 “*” Bullets
-single line `code` snippets... `like this` 
+single line `code` snippets... `like this`
+
+## Todo:
 
 ### Architecture
 
 * Window min size on macos but regular on iOS/iPadOS
 
-### Todo:
+### Features
+
+* Remove characters for snippets
 
 enforce "extra space rule"
 
