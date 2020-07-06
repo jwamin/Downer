@@ -11,8 +11,19 @@ import SwiftUI
 struct DownerApp: App {
     var body: some Scene {
         DocumentGroup(newDocument: DownerDocument()) { file in
+            #if os(macOS)
             ContentView(document: file.$document)
-              //.frame(minWidth:640, minHeight: 480) MacOS only
+                .frame(minWidth: 900, maxWidth: .infinity, minHeight: 500, maxHeight: .infinity)
+                .toolbar {
+                    ToolbarItem {
+                        Button("Button", action: {
+                            print("something")
+                        })
+                    }
+                }// MacOS only
+            #else
+            ContentView(document: file.$document)
+            #endif
         }
     }
 }

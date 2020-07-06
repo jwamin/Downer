@@ -41,7 +41,6 @@ struct ContentView: View {
         
         #if os(macOS)
         
-        
         let touchBar = TouchBar(id:"mac") {
             ForEach(self.touchBarStrings,id:\.self){ str in
                 Button(action: {

@@ -1,15 +1,15 @@
 //
-//  Extensions.swift
+//  TextTransformation.swift
 //  Downer
 //
-//  Created by Joss Manger on 6/28/20.
+//  Created by Joss Manger on 7/5/20.
 //
 
 import Foundation
-import SwiftUI
+
+let validPrefixChars = Constants.validPrefixCharacters
 
 extension String {
-    
     
     /// Trims whitespace characters
     func trim() -> String {
@@ -26,7 +26,13 @@ extension String {
             for index in self.indices{
                 if self[index] == "`"{
                     if let last = current {
-                        indices.append((last, index))
+                        
+                        //index after the first `
+                        let firstCharInRange = self.index(after:last)
+                        
+                        //index before the last `
+                        let lastCharInRange = self.index(before: index)
+                        indices.append((firstCharInRange,lastCharInRange))
                         current = nil
                     } else {
                         current = index
@@ -45,24 +51,4 @@ extension String {
         return []
     }
     
-}
-
-typealias CodeRangeCouplets = Array<(String.Index,String.Index)>
-
-func getHStack(str:String, indices:CodeRangeCouplets) -> AnyView {
-    AnyView(
-        HStack(spacing:0){
-        Text(str[str.startIndex..<indices[0].0])
-        ForEach(indices.indices) { index in
-            Text(str[indices[index].0...indices[index].1])
-                .background(Color.secondary).foregroundColor(.white)
-                .font(.system(.body, design: .monospaced)).cornerRadius(3).padding(1)
-            if indices.indices.contains(index+1), indices[index].1 < indices[index+1].0 {
-                let lowerboundOfGap = str.index(after: indices[index].1)
-                let upperBoundOfGap = str.index(before: indices[index+1].0)
-                Text(str[lowerboundOfGap...upperBoundOfGap])
-            }
-        }
-        Text(str[indices.last!.1..<str.endIndex])
-    })
 }

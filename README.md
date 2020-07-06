@@ -8,7 +8,7 @@
 
 ‘#’ Headings 
 “*” Bullets
-single line `code` snippets... `like this`
+single line `code` snippets… `like this`
 
 ## Todo:
 
@@ -25,3 +25,5 @@ enforce "extra space rule"
 links
 
 Numbered Lists
+
+#What does `this` look like?

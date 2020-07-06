@@ -7,9 +7,8 @@
 
 import SwiftUI
 
-var validPrefixChars = "#*[]()!"
-
 struct WYSView: View {
+    
   @Binding var text: String
   
   func processString(str: String) -> some View {
@@ -45,9 +44,8 @@ struct WYSView: View {
 
     let codeRanges = displayString.getCodeRanges()
     
-    
     if codeRanges.count > 0{
-        return AnyView(getHStack(str: displayString, indices: codeRanges))
+        return AnyView(getHStack(str: displayString, couplets: codeRanges))
     }
     
     switch prefix {
