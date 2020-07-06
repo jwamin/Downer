@@ -102,6 +102,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		57270BBE24B2A51100EE7983 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				5739240B24A586210074AE57 /* DownerApp.swift */,
+				5739240C24A586210074AE57 /* DownerDocument.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		57270BBF24B2A52000EE7983 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				57023EED24A8B88E00C9799C /* Extensions+Modifiers.swift */,
+				57270BB824B2997500EE7983 /* TextTransformation.swift */,
+				57270BBB24B299AE00EE7983 /* Constants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		57270BC024B2A53300EE7983 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				57E0066924A6DC9C00CD44B9 /* WYSView.swift */,
+				5739240D24A586210074AE57 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		5739240524A586210074AE57 = {
 			isa = PBXGroup;
 			children = (
@@ -119,13 +147,9 @@
 		5739240A24A586210074AE57 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				5739240B24A586210074AE57 /* DownerApp.swift */,
-				5739240C24A586210074AE57 /* DownerDocument.swift */,
-				57270BB824B2997500EE7983 /* TextTransformation.swift */,
-				57270BBB24B299AE00EE7983 /* Constants.swift */,
-				5739240D24A586210074AE57 /* ContentView.swift */,
-				57E0066924A6DC9C00CD44B9 /* WYSView.swift */,
-				57023EED24A8B88E00C9799C /* Extensions+Modifiers.swift */,
+				57270BBE24B2A51100EE7983 /* App */,
+				57270BC024B2A53300EE7983 /* Views */,
+				57270BBF24B2A52000EE7983 /* Helpers */,
 				5739240E24A586230074AE57 /* Assets.xcassets */,
 			);
 			path = Shared;
