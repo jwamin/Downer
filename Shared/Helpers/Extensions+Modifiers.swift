@@ -52,8 +52,8 @@ extension Text {
 struct InlineCode: ViewModifier {
     
     func body(content:Content) -> some View {
-        content.background(Color.secondary).foregroundColor(.white)
-            .font(.system(.body, design: .monospaced)).cornerRadius(3).padding(1)
+        content.padding([.leading,.trailing],4).background(Color.secondary).foregroundColor(.white)
+            .font(.system(.body, design: .monospaced)).cornerRadius(3)
     }
     
 }

@@ -47,7 +47,7 @@ struct WYSView: View {
     if codeRanges.count > 0{
         return AnyView(getHStack(str: displayString, couplets: codeRanges))
     }
-    
+        
     switch prefix {
     case "#":
         return AnyView(Text(displayString).font(.largeTitle).bold())

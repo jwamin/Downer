@@ -20,6 +20,7 @@ struct DownerApp: App {
                             print("something")
                         })
                     }
+                    
                 }// MacOS only
             #else
             ContentView(document: file.$document)

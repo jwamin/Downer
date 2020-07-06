@@ -35,7 +35,7 @@ struct ContentView: View {
         #if os(iOS)
         return getEditor(){
             TextEditor(text: $document.text).frame(maxWidth:.infinity)
-            WYSView(text: $document.text).frame(maxWidth:.infinity,maxHeight: .infinity,alignment: .topLeading).padding()
+            WYSView(text: $document.text).frame(maxWidth:.infinity,maxHeight: .infinity,alignment: .topLeading)
         }
         #endif
         
@@ -52,10 +52,8 @@ struct ContentView: View {
         }
         
         return HStack{
-            TextEditor(text: $document.text).frame(maxWidth:.infinity).touchBar(touchBar).onChange(of: /*@START_MENU_TOKEN@*/"Value"/*@END_MENU_TOKEN@*/) { value in
-                /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Code@*/ /*@END_MENU_TOKEN@*/
-            }
-            WYSView(text: $document.text).frame(maxWidth:.infinity,maxHeight: .infinity,alignment: .topLeading).padding()
+            TextEditor(text: $document.text).frame(maxWidth:.infinity).touchBar(touchBar)
+            WYSView(text: $document.text).frame(maxWidth:.infinity,maxHeight: .infinity,alignment: .topLeading)
         }
         #endif
     }
